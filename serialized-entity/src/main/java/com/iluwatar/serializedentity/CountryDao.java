@@ -1,4 +1,6 @@
 /*
+ * This project is licensed under the MIT license. Module model-view-viewmodel is using ZK framework licensed under LGPL (see lgpl-3.0.txt).
+ *
  * The MIT License
  * Copyright © 2014-2022 Ilkka Seppälä
  *
@@ -39,6 +41,9 @@ package com.iluwatar.serializedentity;
 
 import java.io.IOException;
 
+/**
+ * DAO interface for Country transactions.
+ */
 public interface CountryDao {
   int insertCountry() throws IOException;
   int selectCountry() throws IOException, ClassNotFoundException;

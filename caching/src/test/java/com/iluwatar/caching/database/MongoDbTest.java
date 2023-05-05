@@ -55,7 +55,7 @@ class MongoDbTest {
   @BeforeEach
   void init() {
     db = mock(MongoDatabase.class);
-    mongoDb.setDB(db);
+    mongoDb.setDb(db);
     userAccount = new UserAccount(ID, NAME, ADDITIONAL_INFO);
   }
 
@@ -84,7 +84,6 @@ class MongoDbTest {
   void writeToDb() {
     MongoCollection<Document> mongoCollection = mock(MongoCollection.class);
     when(db.getCollection(CachingConstants.USER_ACCOUNT)).thenReturn(mongoCollection);
-    doNothing().when(mongoCollection).insertOne(any(Document.class));
     assertDoesNotThrow(()-> {mongoDb.writeToDb(userAccount);});
   }
 
